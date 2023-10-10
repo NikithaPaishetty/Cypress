@@ -3,7 +3,7 @@
 
 describe("Handle js alerts", () => {
     it("Confirm js alert contains the correct text", () => {
-      cy.visit("https://www.webdriveruniversity.com/")
+      cy.visit("/")
       cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
       cy.url().should('include','Popup-Alerts')
       cy.get(':nth-child(2) > .thumbnail > h2').should('have.text', "JavaScript Alert")
@@ -15,7 +15,7 @@ describe("Handle js alerts", () => {
     })
 
     it("Validate js confirm alert box works correctly when clicking ok", () => {
-        cy.visit("https://www.webdriveruniversity.com/")
+        cy.visit("/")
         cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
         cy.url().should('include','Popup-Alerts')
         cy.get(':nth-child(5) > .thumbnail > h2').should('have.text', "JavaScript Confirm Box")
@@ -28,7 +28,7 @@ describe("Handle js alerts", () => {
     })
 
     it("Validate js confirm alert box works correctly when clicking cancel", () => {
-        cy.visit("https://www.webdriveruniversity.com/")
+        cy.visit("/")
         cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
         cy.url().should('include','Popup-Alerts')
         cy.get(':nth-child(5) > .thumbnail > h2').should('have.text', "JavaScript Confirm Box")
@@ -41,7 +41,7 @@ describe("Handle js alerts", () => {
     })
 
     it.only("Validate js confirm alert box works with stub", () => {
-      cy.visit("https://www.webdriveruniversity.com/")
+      cy.visit("/")
       cy.get('#popup-alerts').invoke('removeAttr', 'target').click({ force: true })
       cy.url().should('include','Popup-Alerts')
       const stub = cy.stub()
